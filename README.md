@@ -2,3 +2,6 @@
 
 ## Daniel Ricardo Ruge Gomez
 
+### Parte I
+
+    ![alt text](/img/media/CPU.png)
