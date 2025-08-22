@@ -1,5 +1,6 @@
 package edu.eci.arsw.primefinder;
 
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -17,6 +18,11 @@ public class Main {
 		hilo2.start();
 		hilo3.start();
 		
+		try{
+			Thread.sleep(5000);
+		} catch(InterruptedException e){
+			e.printStackTrace();
+		}
 		
 		
 	}
