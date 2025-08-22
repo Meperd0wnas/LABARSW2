@@ -4,9 +4,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		PrimeFinderThread pft=new PrimeFinderThread(0, 30000000);
+		int max = 30000000;
+		int hilos = 3;
+		int range = max/hilos;
+
+		PrimeFinderThread hilo1 = new PrimeFinderThread(0, range);
+		PrimeFinderThread hilo2 = new PrimeFinderThread(range+1, 2*range);
+		PrimeFinderThread hilo3 = new PrimeFinderThread(2*range+1, max);
+
 		
-		pft.start();
+		hilo1.start();
+		hilo2.start();
+		hilo3.start();
+		
 		
 		
 	}
