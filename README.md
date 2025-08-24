@@ -16,6 +16,6 @@
 
     uso de los procesadores 
     
-    ![alt text](image.png)
+    ![alt text](/img/media/CPU2.png)
 
     Aqui ya en teoria se puede ver como al usar tres nucleos la carga para cada nucleo resulta mas equitativa:
