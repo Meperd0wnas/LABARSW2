@@ -19,3 +19,17 @@
 ![alt text](/img/media/CPU2.png)
 
     Aqui ya en teoria se puede ver como al usar tres nucleos la carga para cada nucleo resulta mas equitativa:
+
+### Parte II
+
+    1.
+
+    correccion del codigo para que los hilos terminen antes de mostrar el ganador con join().
+
+![alt text](/img/media/correccion1.png)
+
+
+
+    prueba de la corrección
+
+![alt text](/img/media/carrera.png)

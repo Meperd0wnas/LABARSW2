@@ -18,34 +18,38 @@ public class MainCanodromo {
         galgos = new Galgo[can.getNumCarriles()];
         can.setVisible(true);
 
-        //Acción del botón start
+        // Acción del botón start
         can.setStartAction(
-                new ActionListener() {
+            new ActionListener() {
+                @Override
+                public void actionPerformed(final ActionEvent e) {
+                    // deshabilita el botón
+                    ((JButton) e.getSource()).setEnabled(false);
 
-                    @Override
-                    public void actionPerformed(final ActionEvent e) {
-						//como acción, se crea un nuevo hilo que cree los hilos
-                        //'galgos', los pone a correr, y luego muestra los resultados.
-                        //La acción del botón se realiza en un hilo aparte para evitar
-                        //bloquear la interfaz gráfica.
-                        ((JButton) e.getSource()).setEnabled(false);
-                        new Thread() {
-                            public void run() {
-                                for (int i = 0; i < can.getNumCarriles(); i++) {
-                                    //crea los hilos 'galgos'
-                                    galgos[i] = new Galgo(can.getCarril(i), "" + i, reg);
-                                    //inicia los hilos
-                                    galgos[i].start();
-
-                                }
-                               
-				can.winnerDialog(reg.getGanador(),reg.getUltimaPosicionAlcanzada() - 1); 
-                                System.out.println("El ganador fue:" + reg.getGanador());
+                    // corre en un hilo aparte
+                    new Thread() {
+                        public void run() {
+                            for (int i = 0; i < can.getNumCarriles(); i++) {
+                                galgos[i] = new Galgo(can.getCarril(i), "" + i, reg);
+                                galgos[i].start();
                             }
-                        }.start();
 
-                    }
+                            // esperar a que todos terminen
+                            for (int i = 0; i < can.getNumCarriles(); i++) {
+                                try {
+                                    galgos[i].join();
+                                } catch (InterruptedException ex) {
+                                    ex.printStackTrace();
+                                }
+                            }
+
+                            // ahora sí, mostrar ganador
+                            can.winnerDialog(reg.getGanador(), reg.getUltimaPosicionAlcanzada() - 1);
+                            System.out.println("El ganador fue: " + reg.getGanador());
+                        }
+                    }.start();
                 }
+            }
         );
 
         can.setStopAction(
@@ -65,7 +69,6 @@ public class MainCanodromo {
                     }
                 }
         );
-
     }
-
 }
+
