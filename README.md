@@ -33,3 +33,14 @@
     prueba de la corrección
 
 ![alt text](/img/media/carrera.png)
+
+    2.
+
+    inconsistencia :
+
+![alt text](/img/media/inconsistencia1.png)
+
+    El problema (la region critica) esta en esta clase ya que dos o mas hilos pueden leer el mismo valor de ultimaPosicionAlcanzada  antes de que alguno lo actualice (condición de carrera).
+
+![alt text](./img/media/problema.png)
+
