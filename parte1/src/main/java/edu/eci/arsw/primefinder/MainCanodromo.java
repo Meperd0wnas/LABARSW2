@@ -1,4 +1,4 @@
-package arsw.threads;
+package edu.eci.arsw.primefinder;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

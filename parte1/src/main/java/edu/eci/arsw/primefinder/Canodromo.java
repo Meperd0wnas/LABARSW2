@@ -1,4 +1,4 @@
-package arsw.threads;
+package edu.eci.arsw.primefinder;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

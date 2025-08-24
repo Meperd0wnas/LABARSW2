@@ -1,4 +1,4 @@
-package arsw.threads;
+package edu.eci.arsw.primefinder;
 
 /**
  * Un galgo que puede correr en un carril

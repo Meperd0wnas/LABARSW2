@@ -1,4 +1,4 @@
-package arsw.threads;
+package edu.eci.arsw.primefinder;
 
 public class RegistroLlegada {
 
