@@ -42,14 +42,14 @@
 
     El problema (la region critica) esta en esta clase ya que dos o mas hilos pueden leer el mismo valor de ultimaPosicionAlcanzada  antes de que alguno lo actualice (condición de carrera).
 
-![alt text](./img/media/problema.png)
+![alt text](/img/media/problema.png)
 
 
     3.
     
     metodo galgo.corra() actualizado:
 
-![alt text](./img/media/galgoCorra.png)
+![alt text](/img/media/galgoCorra.png)
 
     hice el bloqueo en esta clase y no en RegistroLlegada por que La idea es que el bloqueo sea lo más atómico y corto posible
 
