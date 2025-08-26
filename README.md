@@ -56,7 +56,7 @@
 
     4.
 
-    ![alt text](./img/media/carreraPausa.png)
+![alt text](/img/media/carreraPausa.png)
 
     cree la clase Pausa como monitor (con pause(), resumeAll() y esperaSiPausado() que usan synchronized, wait() y notifyAll()), luego modifique Galgo para recibir un Pausa en su constructor y llamar a pausa.esperaSiPausado() en puntos estratégicos del bucle corra() (antes/después del sleep) para que los hilos se suspendan y reanuden correctamente, y por ultimo actualize MainCanodromo haciendo pausa static final, pasando esa misma instancia a cada Galgo al arrancarlos y cambiando los ActionListener de los botones Stop/Continue para invocar pausa.pause() y pausa.resumeAll() respectivamente; la región crítica de RegistroLlegada se mantuvo igual para conservar la sincronización de las llegadas.
 
