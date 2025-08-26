@@ -28,7 +28,7 @@ public class Galgo extends Thread {
 				carril.finish();
 
 				int ubicacion;
-				// --- REGIÓN CRÍTICA (mínima) ---
+				// --- REGIÓN CRÍTICA  ---
 				synchronized (regl) {
 					ubicacion = regl.getUltimaPosicionAlcanzada();
 					regl.setUltimaPosicionAlcanzada(ubicacion + 1);
